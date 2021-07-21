@@ -18,3 +18,9 @@ export const nameValidator = (name: string) => {
 
   return '';
 };
+
+export const mlsIdValidator = (mlsId: string) => {
+  if (!mlsId || mlsId.length <= 0) return 'MLS ID cannot be empty';
+
+  return '';
+}

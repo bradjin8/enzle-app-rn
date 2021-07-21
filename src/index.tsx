@@ -20,7 +20,7 @@ const Router = createStackNavigator(
     AuthLoadingScreen
   },
   {
-    initialRouteName: "AuthLoadingScreen",
+    initialRouteName: "RegisterScreen",
     headerMode: "none"
   }
 );
