@@ -1,60 +1,8 @@
-﻿# React Native Firebase Login Template
+﻿# React Native Enzle App
 
-More templates at [ReactNativeMarket.com](http://reactnativemarket.com/) 💖
+## Reference
+1. [Firebase Console Project](https://console.firebase.google.com/project/enzle-android/settings/general/web:YTFiYmNlYzItZDI4OS00YTUwLWJhOGItMjM1MWMxNGUwZWM1)
+2. [Application Features](https://drive.google.com/file/d/1fDAnUQ18t1orixMc5Pl3i9OZfLfqzafD/view)
+3. [Assets](https://www.dropbox.com/sh/o04hrj841qvxlzs/AAAtoXKENJO4q7HxXCu1RMGja?dl=0)
 
-## How to use?
 
-1. Download or clone this repo.
-
-2. Install dependencies.
-
-```js
-npm install
-// or
-yarn install
-```
-
-3. Go to `src/core/config.tsx` and replace `FIREBASE_CONFIG` with your own firebase config.
-
-```js
-export const FIREBASE_CONFIG = {
-  apiKey: "xxx-yyy-zzz" // etc.
-  // rest of your firebase config
-};
-```
-
-4. Run project on iOS / Android.
-
-```js
- npm run ios // npm run android
- // or
- yarn ios // yarn android
-```
-
-Project was created using [Expo](https://expo.io/). If you want standard native project please run following command:
-
-```js
-expo eject
-```
-
-## Preview
-
-![homescreen](https://raw.githubusercontent.com/venits/react-native-market/master/assets/firebase-login-template/homescreen.png)
-![login](https://raw.githubusercontent.com/venits/react-native-market/master/assets/firebase-login-template/login.png)
-![register](https://raw.githubusercontent.com/venits/react-native-market/master/assets/firebase-login-template/register.png)
-![forgot](https://raw.githubusercontent.com/venits/react-native-market/master/assets/firebase-login-template/forgot.png)
-![dashboard](https://raw.githubusercontent.com/venits/react-native-market/master/assets/firebase-login-template/dashboard.png)
-
-## Live preview on Expo
-
-Template is available on Expo:
-https://expo.io/@venits/react-native-firebase-login-template-typescript
-
-## Support
-
-In case of any questions or problems, please contact me at:
-[hello@reactnativemarket.com](mailto:hello@reactnativemarket.com)
-
-### Happy Coding 💖
-
-### [ReactNativeMarket.com](http://reactnativemarket.com/)
