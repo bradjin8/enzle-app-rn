@@ -1,11 +1,11 @@
 // Replace with your own firebase config!
 export const FIREBASE_CONFIG = {
-  apiKey: "AIzaSyBDsdN3XWM5D2-c_ti5j44GrhMnBHNmSF0",
-  authDomain: "react-native-market-2861b.firebaseapp.com",
   databaseURL: "https://react-native-market-2861b.firebaseio.com",
-  projectId: "react-native-market-2861b",
-  storageBucket: "react-native-market-2861b.appspot.com",
-  messagingSenderId: "878215484396",
-  appId: "1:878215484396:web:c36074bccb0b5693b0a6c9",
-  measurementId: "G-317PLP59P2"
+  apiKey: "AIzaSyCrzZoMP8CFFM0o4N83J4vBNnChcbG9PNc",
+  authDomain: "enzle-android.firebaseapp.com",
+  projectId: "enzle-android",
+  storageBucket: "enzle-android.appspot.com",
+  messagingSenderId: "127100415458",
+  appId: "1:127100415458:web:c1fecfddbe8db246f75dbb",
+  measurementId: "G-B90QJ8W6KZ"
 };

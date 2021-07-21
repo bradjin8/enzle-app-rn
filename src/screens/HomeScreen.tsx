@@ -10,13 +10,12 @@ type Props = {
   navigation: Navigation;
 };
 
-const HomeScreen = ({ navigation }: Props) => (
+const HomeScreen = ({navigation}: Props) => (
   <Background>
-    <Logo />
-    <Header>Firebase Login</Header>
+    <Header>Enzle Android</Header>
 
     <Paragraph>
-      This template supports Firebase authorization out of the box.
+      This app supports android version of Enzle.
     </Paragraph>
     <Button mode="contained" onPress={() => navigation.navigate("LoginScreen")}>
       Login

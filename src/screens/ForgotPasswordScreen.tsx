@@ -16,10 +16,10 @@ type Props = {
   navigation: Navigation;
 };
 
-const ForgotPasswordScreen = ({ navigation }: Props) => {
-  const [email, setEmail] = useState({ value: "", error: "" });
+const ForgotPasswordScreen = ({navigation}: Props) => {
+  const [email, setEmail] = useState({value: "", error: ""});
   const [loading, setLoading] = useState(false);
-  const [toast, setToast] = useState({ value: "", type: "" });
+  const [toast, setToast] = useState({value: "", type: ""});
 
   const _onSendPressed = async () => {
     if (loading) return;
@@ -27,7 +27,7 @@ const ForgotPasswordScreen = ({ navigation }: Props) => {
     const emailError = emailValidator(email.value);
 
     if (emailError) {
-      setEmail({ ...email, error: emailError });
+      setEmail({...email, error: emailError});
       return;
     }
 
@@ -36,7 +36,7 @@ const ForgotPasswordScreen = ({ navigation }: Props) => {
     const response = await sendEmailWithPassword(email.value);
 
     if (response.error) {
-      setToast({ type: "error", value: response.error });
+      setToast({type: "error", value: response.error});
     } else {
       setToast({
         type: "success",
@@ -49,9 +49,7 @@ const ForgotPasswordScreen = ({ navigation }: Props) => {
 
   return (
     <Background>
-      <BackButton goBack={() => navigation.navigate("LoginScreen")} />
-
-      <Logo />
+      <BackButton goBack={() => navigation.navigate("LoginScreen")}/>
 
       <Header>Restore Password</Header>
 
@@ -59,7 +57,7 @@ const ForgotPasswordScreen = ({ navigation }: Props) => {
         label="E-mail address"
         returnKeyType="done"
         value={email.value}
-        onChangeText={text => setEmail({ value: text, error: "" })}
+        onChangeText={text => setEmail({value: text, error: ""})}
         error={!!email.error}
         errorText={email.error}
         autoCapitalize="none"
@@ -87,7 +85,7 @@ const ForgotPasswordScreen = ({ navigation }: Props) => {
       <Toast
         type={toast.type}
         message={toast.value}
-        onDismiss={() => setToast({ value: "", type: "" })}
+        onDismiss={() => setToast({value: "", type: ""})}
       />
     </Background>
   );
@@ -104,7 +102,7 @@ const styles = StyleSheet.create({
   label: {
     color: theme.colors.secondary,
     width: "100%"
-  }
+  },
 });
 
 export default memo(ForgotPasswordScreen);

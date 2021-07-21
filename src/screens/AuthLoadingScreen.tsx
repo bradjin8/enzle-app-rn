@@ -14,7 +14,7 @@ type Props = {
   navigation: Navigation;
 };
 
-const AuthLoadingScreen = ({ navigation }: Props) => {
+const AuthLoadingScreen = ({navigation}: Props) => {
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
       // User is logged in
@@ -27,7 +27,7 @@ const AuthLoadingScreen = ({ navigation }: Props) => {
 
   return (
     <Background>
-      <ActivityIndicator size="large" color={theme.colors.primary} />
+      <ActivityIndicator size="large" color={theme.colors.primary}/>
     </Background>
   );
 };

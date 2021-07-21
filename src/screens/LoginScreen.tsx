@@ -16,9 +16,9 @@ type Props = {
   navigation: Navigation;
 };
 
-const LoginScreen = ({ navigation }: Props) => {
-  const [email, setEmail] = useState({ value: "", error: "" });
-  const [password, setPassword] = useState({ value: "", error: "" });
+const LoginScreen = ({navigation}: Props) => {
+  const [email, setEmail] = useState({value: "", error: ""});
+  const [password, setPassword] = useState({value: "", error: ""});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
@@ -29,8 +29,8 @@ const LoginScreen = ({ navigation }: Props) => {
     const passwordError = passwordValidator(password.value);
 
     if (emailError || passwordError) {
-      setEmail({ ...email, error: emailError });
-      setPassword({ ...password, error: passwordError });
+      setEmail({...email, error: emailError});
+      setPassword({...password, error: passwordError});
       return;
     }
 
@@ -50,9 +50,7 @@ const LoginScreen = ({ navigation }: Props) => {
 
   return (
     <Background>
-      <BackButton goBack={() => navigation.navigate("HomeScreen")} />
-
-      <Logo />
+      <BackButton goBack={() => navigation.navigate("HomeScreen")}/>
 
       <Header>Welcome back.</Header>
 
@@ -60,7 +58,7 @@ const LoginScreen = ({ navigation }: Props) => {
         label="Email"
         returnKeyType="next"
         value={email.value}
-        onChangeText={text => setEmail({ value: text, error: "" })}
+        onChangeText={text => setEmail({value: text, error: ""})}
         error={!!email.error}
         errorText={email.error}
         autoCapitalize="none"
@@ -73,7 +71,7 @@ const LoginScreen = ({ navigation }: Props) => {
         label="Password"
         returnKeyType="done"
         value={password.value}
-        onChangeText={text => setPassword({ value: text, error: "" })}
+        onChangeText={text => setPassword({value: text, error: ""})}
         error={!!password.error}
         errorText={password.error}
         secureTextEntry
@@ -99,7 +97,7 @@ const LoginScreen = ({ navigation }: Props) => {
         </TouchableOpacity>
       </View>
 
-      <Toast message={error} onDismiss={() => setError("")} />
+      <Toast message={error} onDismiss={() => setError("")}/>
     </Background>
   );
 };
