@@ -6,7 +6,7 @@ export const logoutUser = () => {
   firebase.auth().signOut();
 };
 
-export const signInUser = async ({ name, email, password }: AuthDetails) => {
+export const signInUser = async ({name, email, password}: AuthDetails) => {
   try {
     await firebase.auth().createUserWithEmailAndPassword(email, password);
     firebase.auth().currentUser.updateProfile({
@@ -40,9 +40,11 @@ export const signInUser = async ({ name, email, password }: AuthDetails) => {
   }
 };
 
-export const loginUser = async ({ email, password }: AuthDetails) => {
+export const loginUser = async ({email, password}: AuthDetails) => {
   try {
-    await firebase.auth().signInWithEmailAndPassword(email, password);
+    const res = await firebase.auth().signInWithEmailAndPassword(email, password);
+    console.log('login-response', res)
+
     return {};
   } catch (error) {
     switch (error.code) {

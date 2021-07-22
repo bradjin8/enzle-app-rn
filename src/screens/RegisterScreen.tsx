@@ -13,6 +13,7 @@ import {
 } from "../core/utils";
 import { signInUser } from "../api/auth-api";
 import Toast from "../components/Toast";
+import { fetchMlsInfoByMlsId } from "../api/utahrealestate-api";
 
 type Props = {
   navigation: Navigation;
@@ -40,6 +41,9 @@ const RegisterScreen = ({navigation}: Props) => {
     }
 
     setLoading(true);
+
+    const mlsRes = await fetchMlsInfoByMlsId(mlsId)
+    console.log('register-mls', mlsRes)
 
     const response = await signInUser({
       email: email.value,

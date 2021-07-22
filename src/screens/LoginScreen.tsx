@@ -1,4 +1,4 @@
-import React, { memo, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import { TouchableOpacity, StyleSheet, Text, View } from "react-native";
 import Background from "../components/Background";
 import Logo from "../components/Logo";
@@ -11,6 +11,7 @@ import { emailValidator, passwordValidator } from "../core/utils";
 import { Navigation } from "../types";
 import { loginUser } from "../api/auth-api";
 import Toast from "../components/Toast";
+import { fetchMlsInfoByMlsId } from "../api/utahrealestate-api";
 
 type Props = {
   navigation: Navigation;
@@ -46,7 +47,17 @@ const LoginScreen = ({navigation}: Props) => {
     }
 
     setLoading(false);
+    navigation.navigate("ProfileScreen");
   };
+
+  const loadMls = async () => {
+    const mlsRes = await fetchMlsInfoByMlsId('87205');
+    console.log('login-mls', mlsRes)
+  }
+
+  useEffect(() => {
+    loadMls()
+  }, [])
 
   return (
     <Background>

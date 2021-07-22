@@ -7,3 +7,23 @@ export type AuthDetails = {
   password: string;
   name?: string;
 };
+
+export type Path = {
+  mls: string,
+  state: string,
+}
+
+export type Neighborhood = {
+  fnMask: string,
+  fnGeo: string,
+}
+
+export type MlsInfo = {
+  createdAt: number,
+  mlsSubscription: string,
+  mlsId: string,
+  firstName: string,
+  lastName: string,
+  officeName: string,
+}
+
