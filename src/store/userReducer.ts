@@ -8,6 +8,7 @@ interface UserState {
   uid: string,
   userEmail: string,
   profileImageUrl: string,
+  createdAt: number,
   path: Path,
   favoritePostals: string[],
   favoriteCities: string[]
@@ -21,6 +22,7 @@ const initialState: UserState = {
   uid: '',
   userEmail: '',
   profileImageUrl: '',
+  createdAt: null,
   path: {
     mls: '',
     state: ''
@@ -29,7 +31,6 @@ const initialState: UserState = {
   favoriteCities: [],
   favoriteNeighborhoods: [],
   mlsInfo: {
-    createdAt: 0,
     mlsId: '',
     mlsSubscription: '',
     firstName: '',
@@ -46,14 +47,16 @@ export const userSlice = createSlice({
     setUid: (state, action: PayloadAction<string>) => {
       state.uid = action.payload
     },
-    setSetMlsInfo: (state, action: PayloadAction<MlsInfo>) => {
+    setEmail: (state, action: PayloadAction<string>) => {
+      state.userEmail = action.payload
+    },
+    setMlsInfo: (state, action: PayloadAction<MlsInfo>) => {
       state.mlsInfo = action.payload
     },
-
   },
 })
 
-export const { setUid, setSetMlsInfo } = userSlice.actions;
+export const { setUid, setMlsInfo, setEmail } = userSlice.actions;
 
 // Other code such as selectors can use the imported `RootState` type
 export const selectUid = (state: RootState) => state.user.uid

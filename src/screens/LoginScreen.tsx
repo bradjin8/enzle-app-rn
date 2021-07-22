@@ -12,6 +12,7 @@ import { Navigation } from "../types";
 import { loginUser } from "../api/auth-api";
 import Toast from "../components/Toast";
 import { fetchMlsInfoByMlsId } from "../api/utahrealestate-api";
+import {setUid, setEmail as setStoreEmail} from "../store/userReducer";
 
 type Props = {
   navigation: Navigation;
@@ -46,17 +47,24 @@ const LoginScreen = ({navigation}: Props) => {
       setError(response.error);
     }
 
+    const { user } = response;
+    setUid(user.uid);
+    setStoreEmail(user.email);
+
     setLoading(false);
     navigation.navigate("ProfileScreen");
   };
 
   const loadMls = async () => {
     const mlsRes = await fetchMlsInfoByMlsId('87205');
+    if (mlsRes.success) {
+      // mlsRes.data
+    }
     console.log('login-mls', mlsRes)
   }
 
   useEffect(() => {
-    loadMls()
+    // loadMls()
   }, [])
 
   return (

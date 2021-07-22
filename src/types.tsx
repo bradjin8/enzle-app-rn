@@ -19,7 +19,6 @@ export type Neighborhood = {
 }
 
 export type MlsInfo = {
-  createdAt: number,
   mlsSubscription: string,
   mlsId: string,
   firstName: string,

@@ -9,19 +9,36 @@ const api = create({
 })
 
 export const fetchMlsInfoByMlsId = async (mlsId) => {
-  api.get(`${UtahRealEstate_CONFIG.Member}?$filter=(MemberMlsId eq '${mlsId}')`)
-    .then(response => {
-      console.log('fetch-mls', response);
-      return {
-        success: true,
-        data: response
-      };
-    })
-    .catch(e => {
-      console.log('fetch-mls-ex:', e.message)
-      return {
-        success: false,
-        error: e.message
-      }
-    })
+  return new Promise(async resolve => {
+    api.get(`${UtahRealEstate_CONFIG.Member}?$filter=(MemberMlsId eq '${mlsId}')`)
+      .then(response => {
+        const { data, ok } = response;
+        console.log('fetch-mls', data);
+        if (ok && data.value) {
+          const mlsValue = data.value[0];
+          resolve({
+            success: true,
+            data: {
+              mlsSubscription: mlsValue.MemberType,
+              mlsId: mlsValue.MemberMlsId,
+              firstName: mlsValue.MemberFirstName,
+              lastName: mlsValue.MemberLastName,
+              officeName: mlsValue.OfficeName,
+            }
+          })
+        } else {
+          resolve({
+            success: false,
+            error: 'data error'
+          })
+        }
+      })
+      .catch(e => {
+        console.log('fetch-mls-ex:', e.message)
+        resolve({
+          success: false,
+          error: e.message
+        })
+      })
+  });
 }
